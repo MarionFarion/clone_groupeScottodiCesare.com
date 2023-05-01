@@ -1,0 +1,97 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+@font-face {
+  font-family: "font1";
+  src: url(../Fonts/OpenSans-VariableFont_wdthwght.ttf);
+}
+body {
+  font-family: "font1", sans-serif, sans-serif;
+}
+
+nav {
+  background-color: red;
+  width: 100%;
+  height: 50px;
+}
+
+header {
+  background-color: black;
+  height: 80px;
+  width: 100vw;
+  display: flex;
+}
+header .leftpart {
+  width: 30%;
+  border: solid 1px red;
+}
+header .rightpart {
+  width: 70%;
+  border: solid 1px blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+header .rightpart .contact {
+  border: solid 3px white;
+  width: 500px;
+  height: 30px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 65px;
+}
+main .banner {
+  width: 100vw;
+  height: 500px;
+  background-color: bisque;
+}
+main section {
+  min-width: 1140px;
+}
+main .black {
+  border: solid 1px black;
+  height: 530px;
+}
+main .white {
+  border: solid 1px black;
+  background-color: beige;
+  height: 530px;
+}
+main .partenaires {
+  margin-bottom: 65px;
+  width: 100vw;
+  height: 530px;
+  background-color: cornflowerblue;
+  border: solid black 1px;
+  display: flex;
+}
+main .partenaires .leftpart {
+  width: 30%;
+  border: solid 1px black;
+}
+main .partenaires .rigntpart {
+  width: 70%;
+  border: solid 1px black;
+}
+
+footer {
+  width: 100vw;
+  height: 500px;
+  background-color: black;
+}/*# sourceMappingURL=index.css.map */

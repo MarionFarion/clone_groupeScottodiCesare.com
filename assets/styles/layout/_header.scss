@@ -1,0 +1,23 @@
+header {
+  background-color: black;
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  .leftpart {
+    width: 30%;
+    border: solid 1px red;
+  }
+  .rightpart {
+    width: 70%;
+    border: solid 1px blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    .contact {
+      border: solid 3px white;
+      width: 500px;
+      height: 30px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centercolumn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+body {
+  background-color: white;
+}
+
+@font-face {
+  font-family: "font1";
+  src: url(../Fonts/OpenSans-VariableFont_wdth\wght.ttf);
+}
+
+$font1: "font1", sans-serif;
+
+body {
+  font-family: $font1, sans-serif;
+}

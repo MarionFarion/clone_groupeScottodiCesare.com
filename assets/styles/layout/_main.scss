@@ -1,0 +1,38 @@
+main {
+  @include centercolumn;
+  gap: 65px;
+  .banner {
+    width: 100vw;
+    height: 500px;
+    background-color: bisque;
+  }
+  section {
+    min-width: 1140px;
+  }
+  .black {
+    border: solid 1px black;
+
+    height: 530px;
+  }
+  .white {
+    border: solid 1px black;
+    background-color: beige;
+    height: 530px;
+  }
+  .partenaires {
+    margin-bottom: 65px;
+    width: 100vw;
+    height: 530px;
+    background-color: cornflowerblue;
+    border: solid black 1px;
+    display: flex;
+    .leftpart {
+      width: 30%;
+      border: solid 1px black;
+    }
+    .rigntpart {
+      width: 70%;
+      border: solid 1px black;
+    }
+  }
+}
