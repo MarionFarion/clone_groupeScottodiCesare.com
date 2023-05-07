@@ -1,14 +1,81 @@
 nav {
   width: 100%;
+  @include center;
+  //border: 1px solid red;
   ul {
+    //  border: solid 1px greenyellow;
     display: flex;
-    justify-content: space-around;
-    font-weight: 600;
+    justify-content: center;
+    font-weight: 500;
     flex-wrap: wrap;
-    text-align: center;
+    column-gap: 35px;
     li {
-      display: flex;
       gap: 20px;
+      line-height: 40px;
+      i {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      width: 100vw;
+      background-color: black;
+      border: solid 3px seagreen;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      li {
+        border: solid 1px white;
+        padding-left: 10px;
+      }
+
+      i {
+        border: solid 1px white;
+        position: absolute;
+        right: 15px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    padding-right: 10px;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .menuBurger {
+    height: 40px;
+    width: 50px;
+    background-color: black;
+    border: none;
+    position: relative;
+
+    .bar {
+      display: block;
+      height: 5px;
+      width: 40px;
+      border-radius: 5px;
+      background-color: white;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: 5px;
+        left: 0;
+        height: 5px;
+        width: 40px;
+        background-color: white;
+      }
+      &::after {
+        transform: translateY(-7px);
+      }
+      &::before {
+        transform: translateY(7px);
+      }
+    }
+    @media screen and (min-width: 700px) {
+      display: none;
     }
   }
 }

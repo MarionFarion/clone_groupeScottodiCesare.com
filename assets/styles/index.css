@@ -24,20 +24,90 @@ li {
 
 nav {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav ul {
   display: flex;
-  justify-content: space-around;
-  font-weight: 600;
+  justify-content: center;
+  font-weight: 500;
   flex-wrap: wrap;
-  text-align: center;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
 }
 nav ul li {
-  display: flex;
   gap: 20px;
+  line-height: 40px;
+}
+nav ul li i {
+  margin-left: 10px;
+  font-size: 12px;
+}
+@media screen and (max-width: 700px) {
+  nav ul {
+    width: 100vw;
+    background-color: black;
+    border: solid 3px seagreen;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+  }
+  nav ul li {
+    border: solid 1px white;
+    padding-left: 10px;
+  }
+  nav ul i {
+    border: solid 1px white;
+    position: absolute;
+    right: 15px;
+  }
+}
+@media screen and (max-width: 700px) {
+  nav {
+    padding-right: 10px;
+    align-items: center;
+    justify-content: end;
+  }
+}
+nav .menuBurger {
+  height: 40px;
+  width: 50px;
+  background-color: black;
+  border: none;
+  position: relative;
+}
+nav .menuBurger .bar {
+  display: block;
+  height: 5px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: white;
+}
+nav .menuBurger .bar::after, nav .menuBurger .bar::before {
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  left: 0;
+  height: 5px;
+  width: 40px;
+  background-color: white;
+}
+nav .menuBurger .bar::after {
+  transform: translateY(-7px);
+}
+nav .menuBurger .bar::before {
+  transform: translateY(7px);
+}
+@media screen and (min-width: 700px) {
+  nav .menuBurger {
+    display: none;
+  }
 }
 
 header {
+  position: relative;
   font-family: "font1", sans-serif;
   text-transform: uppercase;
   background-color: black;
@@ -60,7 +130,6 @@ header {
   }
 }
 header .contact {
-  border: 1px solid red;
   padding: 5px 50px;
   display: flex;
   justify-content: center;
@@ -72,6 +141,11 @@ header .contact {
 @media screen and (max-width: 1022px) {
   header .contact {
     justify-content: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  header .contact {
+    justify-content: space-between;
   }
 }
 header .contact .contactEcole {
@@ -88,24 +162,27 @@ header .contact .logosRS {
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 700px) {
+  header .contact .logosRS {
+    font-size: 12px;
+  }
+}
 header .logo {
-  padding: 10px;
   grid-area: logo;
-  border: 1px solid red;
+  padding: 10px;
 }
 header .logo img {
-  width: 100%;
+  width: 70%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 header .menu {
-  padding: 10px;
   font-family: Helvetica, sans-serif;
   font-size: 16px;
-  border: 1px solid red;
   grid-area: menu;
   display: flex;
-  align-items: end;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
