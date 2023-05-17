@@ -18,12 +18,13 @@ header {
       "contact contact"
       "logo menu";
   }
+
   @media screen and (max-width: 700px) {
     grid-template-columns: 50% 50%;
   }
 
   .contact {
-    //   border: 1px solid red;
+    //border: 1px solid red;
     padding: 5px 50px;
     @include center;
     grid-area: contact;
@@ -33,6 +34,7 @@ header {
     @media screen and (max-width: 1022px) {
       justify-content: center;
     }
+
     @media screen and (max-width: 700px) {
       justify-content: space-between;
     }
@@ -41,33 +43,38 @@ header {
       font-size: 12px;
       display: flex;
       gap: 20px;
+
       @media screen and (max-width: 700px) {
         font-size: 10px;
       }
     }
+
     .logosRS {
       display: flex;
       gap: 20px;
+
       @media screen and (max-width: 700px) {
         font-size: 12px;
       }
     }
   }
+
   .logo {
     grid-area: logo;
     padding: 10px;
-    //border: 1px solid red;
+    // border: 1px solid red;
 
     img {
       width: 70%;
       object-fit: contain;
     }
   }
+
   .menu {
     font-family: Helvetica, sans-serif;
     font-size: 16px;
-    // border: 1px solid red;
+    //border: 1px solid red;
     grid-area: menu;
-    @include center;
+    @import "./nav";
   }
 }

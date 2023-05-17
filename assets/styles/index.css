@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+/*  color  */
 body {
   background-color: white;
 }
@@ -20,90 +21,6 @@ body {
 
 li {
   list-style: none;
-}
-
-nav {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav ul {
-  display: flex;
-  justify-content: center;
-  font-weight: 500;
-  flex-wrap: wrap;
-  -moz-column-gap: 35px;
-       column-gap: 35px;
-}
-nav ul li {
-  gap: 20px;
-  line-height: 40px;
-}
-nav ul li i {
-  margin-left: 10px;
-  font-size: 12px;
-}
-@media screen and (max-width: 700px) {
-  nav ul {
-    width: 100vw;
-    background-color: black;
-    border: solid 3px seagreen;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    flex-direction: column;
-  }
-  nav ul li {
-    border: solid 1px white;
-    padding-left: 10px;
-  }
-  nav ul i {
-    border: solid 1px white;
-    position: absolute;
-    right: 15px;
-  }
-}
-@media screen and (max-width: 700px) {
-  nav {
-    padding-right: 10px;
-    align-items: center;
-    justify-content: end;
-  }
-}
-nav .menuBurger {
-  height: 40px;
-  width: 50px;
-  background-color: black;
-  border: none;
-  position: relative;
-}
-nav .menuBurger .bar {
-  display: block;
-  height: 5px;
-  width: 40px;
-  border-radius: 5px;
-  background-color: white;
-}
-nav .menuBurger .bar::after, nav .menuBurger .bar::before {
-  content: "";
-  position: absolute;
-  border-radius: 5px;
-  left: 0;
-  height: 5px;
-  width: 40px;
-  background-color: white;
-}
-nav .menuBurger .bar::after {
-  transform: translateY(-7px);
-}
-nav .menuBurger .bar::before {
-  transform: translateY(7px);
-}
-@media screen and (min-width: 700px) {
-  nav .menuBurger {
-    display: none;
-  }
 }
 
 header {
@@ -180,9 +97,299 @@ header .menu {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
   grid-area: menu;
+}
+header .menu nav {
+  width: 100%;
+  height: 100%;
+  padding: 0px 50px;
+  background-color: rgb(14, 14, 14);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: end;
+}
+header .menu nav .menuContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+}
+header .menu nav .menuContainer .arrowDown::after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  height: 0;
+  width: 0;
+  border-top: 8px solid rgb(255, 255, 255);
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer .arrowDown::after {
+    margin-right: 20px;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 15px;
+    right: 0;
+    margin-left: 10px;
+    height: 0;
+    width: 0;
+    border-top: 8px solid rgb(255, 255, 255);
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer .arrowUp::after {
+    margin-right: 20px;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 15px;
+    right: 0;
+    margin-left: 30px;
+    height: 0;
+    width: 0;
+    border-bottom: 8px solid rgb(255, 255, 255);
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+}
+header .menu nav .menuContainer .menuRow span {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+}
+header .menu nav .menuContainer .menuRow:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  header .menu nav .menuContainer .menuRow:hover .sousMenuContainer {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 0.98;
+  }
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 8%;
+       column-gap: 8%;
+  position: absolute;
+  left: 0px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(14, 14, 14);
+  width: 100vw;
+  padding: 50px;
+  transform: translateY(10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer .menuRow .sousMenuContainer {
+    visibility: visible;
+    opacity: 1;
+    flex-direction: column;
+    padding: 20px;
+    position: inherit;
+    width: 100%;
+    transform: translateY(0);
+    display: none;
+  }
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu {
+  width: 25%;
+  align-self: start;
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn {
+  flex-direction: column;
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn li {
+  padding: 0 30px;
+  width: 100%;
+  font-weight: 700;
+  line-height: 50px;
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn li:hover {
+  cursor: pointer;
+  color: rgb(129, 138, 145);
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn li.btn {
+  border: 1px solid rgb(14, 14, 14);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn li.btn:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 14, 14);
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn li h1 {
+  font-weight: 900;
+  font-size: 18px;
+  border-bottom: 2px solid #E8348C;
+}
+header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenu .sousMenuColumn li h1:hover {
+  cursor: default;
+  color: rgb(14, 14, 14);
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer .menuRow .sousMenuContainer .sousMenuVide {
+    display: none;
+  }
+}
+header .menu nav .menuContainer .menuRow .activeSousMenuMobile {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer .menuRow {
+    width: 100%;
+    position: relative;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainer {
+    position: absolute;
+    background-color: rgb(14, 14, 14);
+    width: 100%;
+    left: 0px;
+    top: 100%;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .menu nav .menuContainerMobileHidden {
+    display: none;
+  }
+}
+header .menu nav .menuBurger {
+  position: relative;
+  width: 25px;
+  height: 45px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .menu nav .menuBurger .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+}
+header .menu nav .menuBurger .bar::after, header .menu nav .menuBurger .bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+}
+header .menu nav .menuBurger .bar::before {
+  transform: translateY(-7px);
+}
+header .menu nav .menuBurger .bar::after {
+  transform: translateY(7px);
+}
+@media screen and (min-width: 768px) {
+  header .menu nav .menuBurger {
+    display: none;
+  }
+}
+header .menu nav .aciveMenuBurger .bar {
+  background-color: transparent;
+  transition: background-color 0.5s ease-in;
+}
+@keyframes activeBefore {
+  0% {
+    transform: translateY(-7px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes activeAfter {
+  0% {
+    transform: translateY(7px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+header .menu nav .aciveMenuBurger .bar::after {
+  border: none;
+  animation-name: activeAfter;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+header .menu nav .aciveMenuBurger .bar::before {
+  border: none;
+  animation-name: activeBefore;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+header .menu nav .disableMenuBurger .bar {
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.5s ease-in;
+}
+@keyframes disableBefore {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes disableAfter {
+  0% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(7px);
+  }
+}
+header .menu nav .disableMenuBurger .bar::after {
+  animation-name: disableAfter;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+header .menu nav .disableMenuBurger .bar::before {
+  animation-name: disableBefore;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 main {
